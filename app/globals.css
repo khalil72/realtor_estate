@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-ember-500 text-white;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-ember-600;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-ember-500 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-ink hover:shadow-[0_0_0_1px_theme(colors.ink.DEFAULT)] active:scale-[0.97];
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-transparent px-7 py-3.5 text-sm font-semibold text-ink transition-all duration-300 hover:border-ink hover:bg-ink hover:text-white active:scale-[0.97];
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-ink active:scale-[0.97];
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .mask-fade-r {
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: slide-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.15s; }
+.reveal-3 { animation-delay: 0.25s; }
+.reveal-4 { animation-delay: 0.35s; }
